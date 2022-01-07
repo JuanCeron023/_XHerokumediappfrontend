@@ -1,0 +1,77 @@
+<div class="example-container">
+    <mat-toolbar color="primary" class="example-toolbar" >
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+            <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+        </button>
+
+        <h1 class="example-app-name">MEDIAPP</h1>
+
+        <span class="example-spacer"></span>
+
+        
+
+        <mat-menu #menu="matMenu">
+            
+        </mat-menu>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container">
+        <mat-sidenav #sidenav style="width: 200px">
+            <img src="assets/logos.png" width="128" style="margin-left: 20px">
+
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/buscar" style="cursor: pointer">
+                <mat-icon>search</mat-icon>
+                <span>Buscar</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta" style="cursor: pointer">
+                <mat-icon>insert_drive_file</mat-icon>
+                <span>Registrar v1</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta-especial" style="cursor: pointer">
+                <mat-icon>insert_drive_file</mat-icon>
+                <span>Registrar v2</span>
+            </button>
+            <mat-divider></mat-divider>            
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/consulta-wizard" style="cursor: pointer">
+                <mat-icon>view_carousel</mat-icon>
+                <span>Registrar W.</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/especialidad" style="cursor: pointer">
+                <mat-icon>star_rate</mat-icon>
+                <span>Especialidades</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/medico" style="cursor: pointer">
+                <mat-icon>healing</mat-icon>
+                <span>Médicos</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/examen" style="cursor: pointer">
+                <mat-icon>assignment</mat-icon>
+                <span>Examenes</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/paciente" style="cursor: pointer">
+                <mat-icon>accessibility</mat-icon>
+                <span>Pacientes</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="sidenav.toggle()" routerLink="/reporte" style="cursor: pointer">
+                <mat-icon>assessment</mat-icon>
+                <span>Reportes</span>
+            </button>
+            <mat-divider></mat-divider>
+            <div class="actives" style="cursor: default">
+                <p>Basado en el curso de Mitocode</p>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
