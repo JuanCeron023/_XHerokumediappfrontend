@@ -20,7 +20,7 @@ export class ExamenService {
     return this.http.get<Examen[]>(this.url);
   }
 
-  listarPorId(idExamen: number) {
+  listarPorId(idExamen: number) { 
     return this.http.get<Examen>(`${this.url}/${idExamen}`);
   }
 
